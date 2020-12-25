@@ -1,0 +1,76 @@
+@import '../../../variables.scss';
+
+.follow__section {
+  height: 70vh;
+  @media only screen and(min-width: $medium) {
+    height: 50vh;
+  }
+  .follow__container {
+    align-items: center;
+    background-color: $section-background;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and(min-width: $medium) {
+      &:first-child {
+        width: 60%;
+      }
+    }
+    & .follow__title {
+      text-align: center;
+      span {
+        color: $color-blue;
+        &:last-child {
+          color: $color-green;
+        }
+      }
+    }
+    & .follow__title + div {
+      display: flex;
+      flex-direction: column;
+      .twitter__logo-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        img {
+          margin-right: 5px;
+          width: 30px;
+        }
+        span {
+          color: $color-white;
+        }
+      }
+      a {
+        margin-top: 15px;
+        cursor: pointer;
+      }
+    }
+    &.woloxer__bg {
+      background-color: $body-background;
+      position: relative;
+      & > img {
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        z-index: 1;
+      }
+      & > div {
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        justify-content: space-between;
+        z-index: 2;
+        & .follow__title {
+          & span {
+            color: $color-blue;
+            &:first-child {
+              color: $color-green;
+            }
+          }
+        }
+      }
+    }
+  }
+}

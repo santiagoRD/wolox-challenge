@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.login__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  .login__header {
+    position: relative;
+    width: 100%;
+    a {
+      position: absolute;
+      width: 150px;
+      top: -130px;
+    }
+  }
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+    width: 100%;
+    padding: 10px;
+    .form__input__container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      a {
+        color: $color-text;
+        cursor: pointer;
+        font-size: $f-size-12;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $color-blue;
+        }
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  @media only screen and(min-width: $medium) {
+    width: 640px;
+    .form__container {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../../variables.scss';
+
+.welcome__section {
+  justify-content: space-evenly;
+  align-items: center;
+  & .welcome__container {
+    max-width: 80%;
+    padding-top: 105px;
+    @media only screen and(min-width: $medium) {
+      &:first-child {
+        max-width: 25%;
+      }
+      &:last-child {
+        max-width: 35%;
+      }
+    }
+    .welcome__title {
+      font-weight: $f-regular;
+      span {
+        color: $color-green;
+        font-weight: $f-bold;
+      }
+    }
+    .welcome__img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}

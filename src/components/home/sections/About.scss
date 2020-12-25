@@ -1,0 +1,33 @@
+@import '../../../variables.scss';
+
+.about__section {
+  height: 50vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .about__container {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .about__title {
+      span {
+        color: $color-blue;
+      }
+    }
+    .about__subtitle {
+      font-weight: $f-regular;
+    }
+    .about__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      width: 150px;
+    }
+  }
+  .about__footer-img {
+    width: 70px;
+  }
+}

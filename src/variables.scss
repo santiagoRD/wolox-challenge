@@ -1,0 +1,66 @@
+//font-weight
+$f-light: 300;
+$f-regular: 400;
+$f-semibold: 600;
+$f-bold: 700;
+//fonts
+@font-face {
+  font-family: 'firaSans';
+  src: url('./assets/Fonts/Fira_Sans/FiraSans-Bold.ttf');
+  font-style: normal;
+  font-weight: $f-bold;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url('./assets/Fonts/Fira_Sans/FiraSans-SemiBold.ttf');
+  font-style: normal;
+  font-weight: $f-semibold;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url('./assets/Fonts/Fira_Sans/FiraSans-Regular.ttf');
+  font-style: normal;
+  font-weight: $f-regular;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url('./assets/Fonts/Fira_Sans/FiraSans-Light.ttf');
+  font-style: normal;
+  font-weight: $f-light;
+}
+$monserrat: 'firaSans', 'Monserrat', sans-serif;
+
+//font-size heading
+$f-size-55: 55px;
+$f-size-55: 44px;
+$f-size-55: 36px;
+$f-size-55: 34px;
+$f-size-55: 26px;
+$f-size-55: 24px;
+$f-size-55: 20px;
+
+//font-size buttons
+$f-size-18: 18px;
+$f-size-16: 16px;
+$f-size-14: 14px;
+$f-size-12: 12px;
+$f-size-10: 10px;
+
+//colors
+$color-green: rgb(151, 207, 0);
+$color-blue: rgb(43, 167, 223);
+$color-black: rgb(0, 0, 0);
+$color-text: rgb(27, 38, 60);
+$color-white: rgb(255, 255, 255);
+
+//backgrounds
+$body-background: rgb(252, 252, 252);
+$section-background: rgb(242, 245, 249);
+
+//media-queries
+$small: 320px;
+$medium: 640px;
+$large: 1024px;
+
+//max-siwdth
+$max-width: 1200px;

@@ -1,0 +1,61 @@
+@import '../../../variables.scss';
+
+.nav__container {
+  // margin-bottom: 20px;
+  & .menu__container {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    @media only screen and(min-width: $medium) {
+      flex-direction: row;
+      padding: 0 200px;
+      justify-content: space-between;
+      height: 60px;
+    }
+    img {
+      width: 150px;
+      padding: 10px 0;
+    }
+    .list__container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media only screen and(min-width: $medium) {
+        flex-direction: row;
+        width: 40%;
+      }
+      .list__item {
+        width: 100%;
+        a {
+          color: $color-black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &:last-child {
+          width: 100%;
+          a {
+            border: none;
+            color: $color-blue;
+            &:hover {
+              color: $color-white;
+            }
+            @media only screen and(min-width: $medium) {
+              border: 1px solid $color-blue;
+              height: 30px;
+              &:hover {
+                color: $color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
