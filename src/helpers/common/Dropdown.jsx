@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Dropdown = ({ options, name, placeholder, selected, onChange, classList }) => (
+const Dropdown = ({ options, name, placeholder, selected, onChange, classList, error, required }) => (
   <div className='custom__select'>
-    <select name={name} placeholder={placeholder} value={selected} onChange={onChange} classList={classList}>
+    <select name={name} placeholder={placeholder} value={selected} onChange={onChange} classList={classList} required={required}>
       <option default value=''>
         {placeholder}
       </option>
@@ -13,6 +13,7 @@ const Dropdown = ({ options, name, placeholder, selected, onChange, classList })
         </option>
       ))}
     </select>
+    {error && <small className={error}>{error}</small>}
   </div>
 );
 
@@ -30,10 +31,13 @@ Dropdown.propTypes = {
   placeholder: PropTypes.string.isRequired,
   selected: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  classList: PropTypes.string
+  classList: PropTypes.string,
+  error: PropTypes.string,
+  required: PropTypes.bool.isRequired
 };
 
 Dropdown.defaultProps = {
   selected: '',
-  classList: ''
+  classList: '',
+  error: ''
 };

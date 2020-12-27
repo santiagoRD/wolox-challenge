@@ -1,27 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { userLogout } from '../../actions/authActions';
-import { noop } from '../../helpers/helpers';
+import TechnologieItem from './TechnologieItem';
 
-const TechnologiesList = props => {
-  const { handleLogout } = props;
+const TechnologiesList = ({ techs, handleSelectFavorite }) => (
+  <main className='tech__main__container fade-in'>{techs ? techs.map(tech => <TechnologieItem key={tech.tech} {...tech} handleSelectFavorite={handleSelectFavorite} />) : ''}</main>
+);
 
-  const handleUserLogout = () => {
-    localStorage.removeItem('auth');
-    handleLogout();
-  };
-  return (
-    <div>
-      <h1>Listado de tecnologias</h1>
-      <hr />
-      <button type='button' onClick={handleUserLogout}>
-        Logout
-      </button>
-    </div>
-  );
-};
-
-const mapDispatchToProps = dispatch => bindActionCreators({ handleLogout: userLogout }, dispatch);
-
-export default connect(noop, mapDispatchToProps)(TechnologiesList);
+export default TechnologiesList;

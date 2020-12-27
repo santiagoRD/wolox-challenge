@@ -1,8 +1,11 @@
 import types from '../types/types';
 
-const userRegistry = body => ({
+export const userRegistry = body => ({
   type: types.createUser,
   payload: { ...body }
 });
 
-export default userRegistry;
+export const registryError = error => ({
+  type: types.registryError,
+  payload: error
+});

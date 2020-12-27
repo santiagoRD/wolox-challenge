@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ classList, type, value, onChange, placeholder, name, maxLength, minLength, onBlur, onFocus, required, autoComplete, error }) => (
+const Input = ({ classList, type, value, onChange, placeholder, name, maxLength, minLength, onBlur, onFocus, required, autoComplete, error, id, htmlFor, labelText }) => (
   <div className='input__container'>
     <input
       className={classList}
@@ -16,7 +16,9 @@ const Input = ({ classList, type, value, onChange, placeholder, name, maxLength,
       maxLength={maxLength}
       autoComplete={autoComplete}
       minLength={minLength}
+      id={id}
     />
+    {type === 'checkbox' && <label htmlFor={htmlFor}>{labelText}</label>}
     {error && <small className='error'>{error}</small>}
   </div>
 );
@@ -35,7 +37,10 @@ Input.propTypes = {
   onFocus: PropTypes.func,
   required: PropTypes.bool.isRequired,
   autoComplete: PropTypes.string,
-  minLength: PropTypes.number
+  minLength: PropTypes.number,
+  id: PropTypes.string,
+  htmlFor: PropTypes.string,
+  labelText: PropTypes.string.isRequired
 };
 
 Input.defaultProps = {
@@ -44,5 +49,7 @@ Input.defaultProps = {
   type: 'text',
   onBlur: () => {},
   onFocus: () => {},
-  autoComplete: 'off'
+  autoComplete: 'off',
+  id: '',
+  htmlFor: ''
 };

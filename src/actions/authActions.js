@@ -1,12 +1,11 @@
 import types from '../types/types';
 
-export const userAuthentication = (token, email, logged, error) => ({
+export const userAuthentication = (token, email, logged) => ({
   type: types.login,
   payload: {
     token,
     email,
-    logged,
-    error
+    logged
   }
 });
 
@@ -17,5 +16,5 @@ export const userLogout = () => ({
 
 export const authError = error => ({
   type: types.error,
-  payload: { error }
+  payload: error
 });

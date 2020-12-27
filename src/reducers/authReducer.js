@@ -1,27 +1,23 @@
 import types from '../types/types';
 
 const initialState = {
-  token: '',
-  email: '',
-  logged: false,
+  user: {
+    token: '',
+    email: '',
+    logged: false
+  },
   error: ''
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.login: {
-      const { token, email, logged, error } = action.payload;
-      return {
-        token,
-        email,
-        logged,
-        error
-      };
+      return { ...state, user: { ...action.payload } };
     }
     case types.logout:
-      return { logged: false };
+      return { ...state, user: { ...state.user, logged: false } };
 
-    case types.error:
+    case types.authError:
       return { ...state, error: action.payload };
 
     default:

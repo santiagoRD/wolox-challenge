@@ -3,10 +3,10 @@ import { useState } from 'react';
 const useForm = ({ initialState = {} }) => {
   const [values, setValues] = useState(initialState);
 
-  const handleInputChange = ({ target }) => {
+  const handleInputChange = ({ target }, checkbox = false) => {
     setValues({
       ...values,
-      [target.name]: target.value
+      [target.name]: checkbox ? target.checked : target.value
     });
   };
 

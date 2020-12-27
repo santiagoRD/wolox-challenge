@@ -76,8 +76,8 @@ const countriesOptions = [
       },
       {
         id: 3,
-        name: 'Argentina',
-        value: 'Argentina'
+        name: 'Mendoza',
+        value: 'Mendoza'
       },
       {
         id: 4,

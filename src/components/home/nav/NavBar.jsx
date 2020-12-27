@@ -22,7 +22,7 @@ const NavBar = () => (
           </NavLink>
         </li>
         <li className='list__item'>
-          <NavLink smooth to='/login' className='btn btn-outline btn-color-blue'>
+          <NavLink smooth to='/login'>
             Login
           </NavLink>
         </li>
