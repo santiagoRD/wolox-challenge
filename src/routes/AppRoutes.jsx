@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { HashRouter as Router, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { userAuthentication } from '../actions/authActions';
 import Modal from '../helpers/common/Modal';
