@@ -15,25 +15,25 @@
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Bold.1e229b29.ttf);
+  src: url(../media/FiraSans-Bold.1e229b29.ttf);
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-SemiBold.5d3cc3f4.ttf);
+  src: url(../media/FiraSans-SemiBold.5d3cc3f4.ttf);
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Regular.4dc72c8d.ttf);
+  src: url(../media/FiraSans-Regular.4dc72c8d.ttf);
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Light.27755a20.ttf);
+  src: url(../media/FiraSans-Light.27755a20.ttf);
   font-style: normal;
   font-weight: 300;
 }

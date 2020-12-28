@@ -1,24 +1,24 @@
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Bold.1e229b29.ttf);
+  src: url(../media/FiraSans-Bold.1e229b29.ttf);
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-SemiBold.5d3cc3f4.ttf);
+  src: url(../media/FiraSans-SemiBold.5d3cc3f4.ttf);
   font-style: normal;
   font-weight: 600;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Regular.4dc72c8d.ttf);
+  src: url(../media/FiraSans-Regular.4dc72c8d.ttf);
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: 'firaSans';
-  src: url(./static/media/FiraSans-Light.27755a20.ttf);
+  src: url(../media/FiraSans-Light.27755a20.ttf);
   font-style: normal;
   font-weight: 300;
 }
@@ -64,10 +64,10 @@
   border: none;
 }
 .techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:first-child {
-  background-image: url(/static/media/arrow-up.029e9e03.svg);
+  background-image: url(../media/arrow-up.029e9e03.svg);
 }
 .techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:last-child {
-  background-image: url(/static/media/arrow-down.5b0512cf.svg);
+  background-image: url(../media/arrow-down.5b0512cf.svg);
 }
 .techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs {
   display: flex;
