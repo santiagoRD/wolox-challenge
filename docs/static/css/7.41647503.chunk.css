@@ -1,2 +1,77 @@
-@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Bold.1e229b29.ttf);font-style:normal;font-weight:700}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-SemiBold.5d3cc3f4.ttf);font-style:normal;font-weight:600}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Regular.4dc72c8d.ttf);font-style:normal;font-weight:400}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Light.27755a20.ttf);font-style:normal;font-weight:300}.login__section{display:flex;flex-direction:column;justify-content:center;align-items:center;width:300px}.login__section .login__header{position:relative;width:100%}.login__section .login__header a{position:absolute;width:150px;top:-130px}.login__section .form__container{display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:50vh;width:100%;padding:10px}.login__section .form__container .form__input__container{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly}.login__section .form__container .form__input__container a{color:#1b263c;cursor:pointer;font-size:12px;transition:all .2s ease-in-out}.login__section .form__container .form__input__container a:hover{color:#2ba7df}.login__section .form__container .form__input__container a span{text-decoration:underline}@media only screen and (min-width:640px){.login__section{width:640px}.login__section .form__container{width:50%}}
+@font-face {
+  font-family: 'firaSans';
+  src: url(../media/FiraSans-Bold.1e229b29.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(../media/FiraSans-SemiBold.5d3cc3f4.ttf);
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(../media/FiraSans-Regular.4dc72c8d.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(../media/FiraSans-Light.27755a20.ttf);
+  font-style: normal;
+  font-weight: 300;
+}
+.login__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+.login__section .login__header {
+  position: relative;
+  width: 100%;
+}
+.login__section .login__header a {
+  position: absolute;
+  width: 150px;
+  top: -130px;
+}
+.login__section .form__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  width: 100%;
+  padding: 10px;
+}
+.login__section .form__container .form__input__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login__section .form__container .form__input__container a {
+  color: #1b263c;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease-in-out;
+}
+.login__section .form__container .form__input__container a:hover {
+  color: #2ba7df;
+}
+.login__section .form__container .form__input__container a span {
+  text-decoration: underline;
+}
+@media only screen and (min-width: 640px) {
+  .login__section {
+    width: 640px;
+  }
+  .login__section .form__container {
+    width: 50%;
+  }
+}
 /*# sourceMappingURL=7.41647503.chunk.css.map */
