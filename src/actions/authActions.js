@@ -15,6 +15,6 @@ export const userLogout = () => ({
 });
 
 export const authError = error => ({
-  type: types.error,
+  type: types.authError,
   payload: error
 });

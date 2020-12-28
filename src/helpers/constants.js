@@ -5,7 +5,7 @@ import drinkSnaksIcon from '../assets/Ic_DrinkSnacks.svg';
 import laptopIcon from '../assets/Ic_laptop.svg';
 import brainIcon from '../assets/Ic_brain.svg';
 
-const BASE_URL = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com';
+const BASE_URL = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com';
 
 const sliderOptions = [
   {
