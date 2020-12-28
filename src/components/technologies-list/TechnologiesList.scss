@@ -65,7 +65,7 @@
   }
   .tech__main__container {
     display: flex;
-    // height: 80vh;
+    min-height: 80vh;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px 0;
@@ -127,6 +127,11 @@
       &:hover {
         transform: scale(1.01);
       }
+    }
+    .no__items__found {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .tech__footer__container {

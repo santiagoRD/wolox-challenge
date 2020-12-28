@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Dropdown = ({ options, name, placeholder, selected, onChange, classList, error, required }) => (
   <div className='custom__select'>
-    <select name={name} placeholder={placeholder} value={selected} onChange={onChange} classList={classList} required={required}>
+    <select name={name} placeholder={placeholder} value={selected} onChange={onChange} className={classList} required={required}>
       <option default value=''>
         {placeholder}
       </option>

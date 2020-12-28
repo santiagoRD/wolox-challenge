@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TechnologiesFooter = ({ total }) => (
   <footer className='tech__footer__container'>
@@ -9,3 +10,11 @@ const TechnologiesFooter = ({ total }) => (
 );
 
 export default TechnologiesFooter;
+
+TechnologiesFooter.propTypes = {
+  total: PropTypes.number
+};
+
+TechnologiesFooter.defaultProps = {
+  total: 0
+};

@@ -236,7 +236,7 @@ section {
   height: 40px;
   justify-content: center;
   transition: all 0.3s ease-in-out;
-  min-width: 100px;
+  // min-width: 100px;
   cursor: pointer;
   &:hover {
     background: $color-blue;

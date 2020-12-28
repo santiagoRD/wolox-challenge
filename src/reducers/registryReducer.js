@@ -9,7 +9,7 @@ const initialState = {
     email: '',
     phone: '',
     password: '',
-    condditions: false,
+    conditions: false,
     token: ''
   },
   error: ''

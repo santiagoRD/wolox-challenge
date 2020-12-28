@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <LoginPage /> should render <LoginPage /> 1`] = `
+<Suspense
+  fallback={<Loader />}
+>
+  <section
+    className="login__section"
+  >
+    <div
+      className="login__header"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="wolox-icon"
+          src="logo_full_color.svg"
+        />
+      </a>
+    </div>
+    <h2>
+      Bienvenido
+    </h2>
+    <form
+      className="form__container"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form__input__container w-100"
+      />
+      <div
+        className="form__input__container w-100"
+      >
+        <a
+          href="/registry"
+          onClick={[Function]}
+        >
+          No tienes cuenta? registrate 
+          <span>
+            aquí.
+          </span>
+        </a>
+      </div>
+    </form>
+  </section>
+  <div
+    className="loader__wrapper"
+  >
+    <div
+      className="loader__container"
+    >
+      <div
+        className="loader__item"
+      />
+    </div>
+  </div>
+</Suspense>
+`;

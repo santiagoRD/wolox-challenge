@@ -3,19 +3,22 @@
 .nav__container {
   // margin-bottom: 20px;
   & .menu__container {
-    position: fixed;
-    width: 100%;
+    align-items: center;
+    background: $section-background;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    z-index: 10;
-    top: 0;
     left: 0;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
     @media only screen and(min-width: $medium) {
+      background: transparent;
       flex-direction: row;
-      padding: 0 200px;
-      justify-content: space-between;
       height: 60px;
+      justify-content: space-between;
+      padding: 0 200px;
     }
     img {
       width: 150px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import TwitterLogo from '../../../assets/twitter.svg';
+import TwitterLogo from '../../../assets/twitter.png';
 import WoloxerLogo from '../../../assets/img_woloxer@3x.png';
 import './FollowSection.scss';
 

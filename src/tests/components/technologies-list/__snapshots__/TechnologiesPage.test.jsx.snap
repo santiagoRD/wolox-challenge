@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <TechnologiesPage /> should render <TechnologiesPage /> 1`] = `
+<section
+  className="techlist__section"
+>
+  <Suspense
+    fallback={<Loader />}
+  >
+    <div
+      className="loader__wrapper"
+    >
+      <div
+        className="loader__container"
+      >
+        <div
+          className="loader__item"
+        />
+      </div>
+    </div>
+  </Suspense>
+</section>
+`;

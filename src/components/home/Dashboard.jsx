@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 import PublicRoute from '../../routes/PublicRoute';
 import HomePage from './HomePage';
@@ -16,3 +17,11 @@ const Dashboard = ({ logged }) => (
 );
 
 export default Dashboard;
+
+Dashboard.propTypes = {
+  logged: PropTypes.bool
+};
+
+Dashboard.defaultProps = {
+  logged: false
+};

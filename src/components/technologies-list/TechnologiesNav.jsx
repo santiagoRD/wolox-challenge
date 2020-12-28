@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '../../helpers/common/Input';
 import Button from '../../helpers/common/Button';
 import starYellow from '../../assets/star-yellow.svg';
@@ -25,3 +26,17 @@ const TechnologiesNav = ({ searchText, handleInputChange, favorites, handleSortA
 );
 
 export default TechnologiesNav;
+
+TechnologiesNav.propTypes = {
+  searchText: PropTypes.string,
+  handleInputChange: PropTypes.func.isRequired,
+  favorites: PropTypes.number,
+  handleSortAsc: PropTypes.func.isRequired,
+  handleSortDesc: PropTypes.func.isRequired,
+  handleUserLogout: PropTypes.func.isRequired
+};
+
+TechnologiesNav.defaultProps = {
+  searchText: '',
+  favorites: 0
+};

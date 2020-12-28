@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import starWhite from '../../assets/star.svg';
 import starYellow from '../../assets/star-yellow.svg';
 
@@ -24,3 +25,15 @@ const TechnologieItem = ({ tech, year, author, license, language, type, logo, fa
 );
 
 export default TechnologieItem;
+
+TechnologieItem.propTypes = {
+  tech: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  license: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
+  favorite: PropTypes.bool.isRequired,
+  handleSelectFavorite: PropTypes.func.isRequired
+};

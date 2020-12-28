@@ -2,7 +2,7 @@ import types from '../types/types';
 
 export const userRegistry = body => ({
   type: types.createUser,
-  payload: { ...body }
+  payload: body
 });
 
 export const registryError = error => ({

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Loader from '../../helpers/common/Loader';
-import useForm from '../../hooks/useForm';
 import { validateEmail } from '../../helpers/helpers';
 import { userAuthentication, authError } from '../../actions/authActions';
 import { BASE_URL } from '../../helpers/constants';
@@ -16,14 +15,21 @@ const Button = lazy(() => import('../../helpers/common/Button'));
 const Input = lazy(() => import('../../helpers/common/Input'));
 
 const LoginPage = props => {
-  const [formValues, handleInputChange] = useForm({
+  const [formValues, setFormValues] = useState({
     email: '',
     password: ''
   });
   const [error, setError] = useState({});
 
   const { email, password } = formValues;
-  const { handleLogin, history, handleError, errorRequest } = props;
+  const { handleLogin, history, handleError } = props;
+
+  const handleInputChange = ({ target }) => {
+    setFormValues({
+      ...formValues,
+      [target.name]: target.value
+    });
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -95,6 +101,8 @@ const LoginPage = props => {
               maxLength={30}
               required
               error={error?.email ? 'Correo ingresado no valido' : ''}
+              id='login-name'
+              labelText=''
             />
             <Input
               classList={`${error?.passError ? 'error' : ''}`}
@@ -104,6 +112,8 @@ const LoginPage = props => {
               placeholder='Ingresa tu contraseña'
               name='password'
               required
+              id='login-password'
+              labelText=''
             />
           </div>
           <div className='form__input__container w-100'>
@@ -113,20 +123,19 @@ const LoginPage = props => {
             </Link>
           </div>
         </form>
-        {errorRequest && <small className='error'>{errorRequest}</small>}
       </section>
     </Suspense>
   );
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({ handleLogin: userAuthentication, handleError: authError }, dispatch);
-const mapStateToProps = ({ error }) => ({ errorRequest: error });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(null, mapDispatchToProps)(LoginPage);
 
 LoginPage.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   history: PropTypes.shape({
     replace: PropTypes.func
-  }).isRequired
+  }).isRequired,
+  handleError: PropTypes.func.isRequired
 };

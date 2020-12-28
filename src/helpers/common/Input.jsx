@@ -26,9 +26,9 @@ const Input = ({ classList, type, value, onChange, placeholder, name, maxLength,
 export default Input;
 
 Input.propTypes = {
-  classList: PropTypes.string.isRequired,
+  classList: PropTypes.string,
   type: PropTypes.oneOf(['button', 'checkbox', 'date', 'email', 'number', 'password', 'submit', 'tel', 'text']),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -40,10 +40,12 @@ Input.propTypes = {
   minLength: PropTypes.number,
   id: PropTypes.string,
   htmlFor: PropTypes.string,
-  labelText: PropTypes.string.isRequired
+  labelText: PropTypes.string.isRequired,
+  error: PropTypes.string
 };
 
 Input.defaultProps = {
+  classList: '',
   maxLength: 30,
   minLength: 1,
   type: 'text',
@@ -51,5 +53,6 @@ Input.defaultProps = {
   onFocus: () => {},
   autoComplete: 'off',
   id: '',
-  htmlFor: ''
+  htmlFor: '',
+  error: ''
 };

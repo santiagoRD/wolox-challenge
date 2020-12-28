@@ -1,9 +1,9 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import useForm from '../../hooks/useForm';
 import Loader from '../../helpers/common/Loader';
 import { validateOnlyNumbers, validateEmail, validatePassCoincidence, validatePasswordStructure } from '../../helpers/helpers';
 import { BASE_URL, countriesOptions } from '../../helpers/constants';
@@ -17,7 +17,7 @@ const Input = lazy(() => import('../../helpers/common/Input'));
 const Dropdown = lazy(() => import('../../helpers/common/Dropdown'));
 
 const RegistryPage = props => {
-  const [registryValues, handleInputChange, handleReset] = useForm({
+  const [registryValues, setRegistryValues] = useState({
     name: '',
     lastName: '',
     country: '',
@@ -28,6 +28,17 @@ const RegistryPage = props => {
     confirmPassword: '',
     conditions: false
   });
+
+  const handleInputChange = ({ target }, checkbox = false) => {
+    setRegistryValues({
+      ...registryValues,
+      [target.name]: checkbox ? target.checked : target.value
+    });
+  };
+
+  const handleReset = newValue => {
+    setRegistryValues(newValue);
+  };
   const [provinceOptions, setProvinceOptions] = useState([]);
   const [error, setError] = useState({});
   const { name, lastName, country, province, email, phone, password, confirmPassword, conditions } = registryValues;
@@ -102,7 +113,7 @@ const RegistryPage = props => {
           token
         });
         message = 'Genial, el registro fue exitoso!!';
-        handleReset({ name: '', lastName: '', country: '', province: '', email: '', phone: '', password: '', confirmPassword: '' });
+        handleReset({ name: '', lastName: '', country: '', province: '', email: '', phone: '', password: '', confirmPassword: '', conditions: false });
       } catch (err) {
         handleRegistryError(`Ha ocurrido un error en el registro ${err}`);
         message = 'Ups algo salió mal con el registro, intentalo de nuevo.';
@@ -133,6 +144,8 @@ const RegistryPage = props => {
             maxLength={30}
             required
             error={error?.name ? 'El campo nombre es requerido' : ''}
+            id='registry-name'
+            labelText=''
           />
           <Input
             classList={error?.lastName || ''}
@@ -145,6 +158,8 @@ const RegistryPage = props => {
             maxLength={30}
             required
             error={error?.lastName ? 'El campo apellido es requerido' : ''}
+            id='registry-lastname'
+            labelText=''
           />
           <Dropdown
             classList={error?.country || ''}
@@ -181,6 +196,8 @@ const RegistryPage = props => {
             maxLength={10}
             required
             error={error?.phone ? 'El campo teléfono es requerido' : ''}
+            id='registry-phone'
+            labelText=''
           />
           <Input
             classList={error?.email || ''}
@@ -193,6 +210,8 @@ const RegistryPage = props => {
             name='email'
             required
             error={error?.email ? 'Correo ingresado no valido' : ''}
+            id='registry-email'
+            labelText=''
           />
           <Input
             classList={error?.password || ''}
@@ -206,6 +225,8 @@ const RegistryPage = props => {
             required
             minLength={6}
             error={error?.password ? 'Este campo debe ser alfanumérico y mínimo 6 caracteres' : ''}
+            labelText=''
+            id='registry-password'
           />
           <Input
             classList={error?.confirmPassword || ''}
@@ -219,19 +240,26 @@ const RegistryPage = props => {
             required
             minLength={6}
             error={error?.confirmPassword ? 'Las constraseñas no coinciden' : ''}
+            id='registry-confirm-password'
+            labelText=''
           />
-          <Input
-            type='checkbox'
-            value={conditions}
-            onChange={e => handleInputChange(e, true)}
-            placeholder=''
-            name='conditions'
-            id='terms-and-conditions'
-            htmlFor='terms-and-conditions'
-            labelText='Acepto los términos y condiciones.'
-            required
-            error={error?.conditions ? 'Debes aceptar los términos y condiciones' : ''}
-          />
+          <div className='term__conditions__container'>
+            <Input
+              type='checkbox'
+              value={conditions}
+              onChange={e => handleInputChange(e, true)}
+              placeholder=''
+              name='conditions'
+              id='terms-and-conditions'
+              htmlFor='terms-and-conditions'
+              labelText='Acepto los términos y condiciones.'
+              required
+              error={error?.conditions ? 'Debes aceptar los términos y condiciones' : ''}
+            />
+            <Link to='/terms-and-conditions' target='_blank' rel='noreferer'>
+              Leer
+            </Link>
+          </div>
           <Button text='Registrarme' classList='btn btn-bg-blue btn-outline' type='submit' />
         </form>
         {errorRequest && <small className='error'>{errorRequest}</small>}
@@ -246,3 +274,14 @@ const mapStateToProps = ({ error }) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistryPage);
+
+RegistryPage.propTypes = {
+  handleCreateUser: PropTypes.func.isRequired,
+  handleRegistryError: PropTypes.func.isRequired,
+  handleToggleModal: PropTypes.func.isRequired,
+  errorRequest: PropTypes.string
+};
+
+RegistryPage.defaultProps = {
+  errorRequest: ''
+};

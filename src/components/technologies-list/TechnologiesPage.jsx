@@ -1,4 +1,5 @@
 import React, { useEffect, lazy, Suspense, useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -15,10 +16,10 @@ const TechnologiesList = lazy(() => import('./TechnologiesList'));
 
 const TechnologiesPage = props => {
   const [techList, setTechList] = useState([]);
-  const { handleSetTechs, handleSetError } = props;
+  const { handleSetTechs, handleSetError, handleLogout } = props;
   const [searchText, setSearchText] = useState('');
+  const [updateData, setUpdateData] = useState(true);
   const filteredTechList = useMemo(() => getTechsByNameAndType(techList, searchText), [techList, searchText, setTechList]);
-  const { handleLogout } = props;
 
   const handleUserLogout = () => {
     localStorage.removeItem('auth');
@@ -29,11 +30,14 @@ const TechnologiesPage = props => {
     setSearchText(target.value);
   };
 
+  const handleUpdateData = techs => {
+    localStorage.setItem('techList', JSON.stringify(techs));
+    setUpdateData(true);
+  };
+
   const handleSelectFavorite = name => {
     const tmpTechList = techList.map(tech => (tech.tech === name ? { ...tech, favorite: !tech.favorite } : tech));
-    setTechList(tmpTechList);
-    handleSetTechs(tmpTechList);
-    localStorage.setItem('techList', JSON.stringify(tmpTechList));
+    handleUpdateData(tmpTechList);
   };
 
   const getTechList = async () => {
@@ -55,12 +59,6 @@ const TechnologiesPage = props => {
     return quantity;
   };
 
-  const handleUpdateData = techs => {
-    localStorage.setItem('techList', JSON.stringify(techs));
-    setTechList(techs);
-    handleSetTechs(techs);
-  };
-
   const handleSortAsc = () => {
     const sortedTechs = sortAsc(techList);
     handleUpdateData(sortedTechs);
@@ -73,19 +71,19 @@ const TechnologiesPage = props => {
   const favorites = useMemo(() => handleCalculateFavorites(), [techList]);
 
   useEffect(() => {
-    if (localStorage.getItem('techList')) {
-      setTechList(JSON.parse(localStorage.getItem('techList')));
-      handleSetTechs(JSON.parse(localStorage.getItem('techList')));
-    } else {
-      getTechList();
+    if (updateData) {
+      if (localStorage.getItem('techList')) {
+        setTechList(JSON.parse(localStorage.getItem('techList')));
+        handleSetTechs(JSON.parse(localStorage.getItem('techList')));
+      } else {
+        getTechList();
+      }
+      setUpdateData(false);
     }
-  }, [techList]);
+  }, [updateData]);
   return (
     <section className='techlist__section'>
       <Suspense fallback={<Loader />}>
-        <button type='button' style={{ display: 'none' }} onClick={handleUserLogout}>
-          Logout
-        </button>
         <TechnologiesNav
           searchText={searchText}
           handleInputChange={handleInputChange}
@@ -104,3 +102,9 @@ const TechnologiesPage = props => {
 const mapDispatchToProps = dispatch => bindActionCreators({ handleLogout: userLogout, handleSetTechs: setTechnologies, handleSetError: techError }, dispatch);
 
 export default connect(noop, mapDispatchToProps)(TechnologiesPage);
+
+TechnologiesPage.propTypes = {
+  handleSetTechs: PropTypes.func.isRequired,
+  handleSetError: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired
+};
