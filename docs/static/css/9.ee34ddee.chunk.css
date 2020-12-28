@@ -1,2 +1,174 @@
-@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Bold.1e229b29.ttf);font-style:normal;font-weight:700}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-SemiBold.5d3cc3f4.ttf);font-style:normal;font-weight:600}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Regular.4dc72c8d.ttf);font-style:normal;font-weight:400}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Light.27755a20.ttf);font-style:normal;font-weight:300}.techlist__section{display:block;width:300px;max-height:100vh}@media only screen and (min-width:640px){.techlist__section{width:640px}}@media only screen and (min-width:1024px){.techlist__section{width:1024px}}.techlist__section .tech__nav__container{width:100%;background:#f2f5f9;padding:10px}.techlist__section .tech__nav__container .tech__nav__right{display:flex;align-items:center}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs,.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters{flex:1 1 50%}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters{display:flex;justify-content:space-evenly;max-width:135px}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button{min-width:30px;width:30px;height:30px;background-size:contain;background-repeat:no-repeat;border:none}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:first-child{background-image:url(/static/media/arrow-up.029e9e03.svg)}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:last-child{background-image:url(/static/media/arrow-down.5b0512cf.svg)}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs{display:flex;justify-content:center;align-items:center}.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs img{width:25px;margin-right:10px}@media only screen and (min-width:640px){.techlist__section .tech__nav__container{display:flex}.techlist__section .tech__nav__container .input__container{display:flex;align-items:center;max-width:50%}.techlist__section .tech__nav__container .tech__nav__right{justify-content:space-evenly;width:50%}}.techlist__section .tech__main__container{display:flex;min-height:80vh;flex-wrap:wrap;justify-content:center;margin:10px 0;overflow-y:auto}.techlist__section .tech__main__container::-webkit-scrollbar{background:#fff;width:3px}.techlist__section .tech__main__container::-webkit-scrollbar-thumb{background:#97cf00}.techlist__section .tech__main__container .tech__card__container{align-items:center;background:#fff;box-shadow:0 0 8px 2px rgba(0,0,0,.5);border-radius:5px;cursor:pointer;display:flex;flex:1 0 280px;flex-direction:column;height:250px;justify-content:space-between;margin:10px;max-width:300px;padding:10px;transition:all .2s ease-in-out}.techlist__section .tech__main__container .tech__card__container img{max-width:200px;max-height:100px;padding:10px}.techlist__section .tech__main__container .tech__card__container .tech__card__body{align-items:center;border-top:2px solid #1b263c;display:flex;justify-content:space-evenly;padding:10px 0;min-height:100px;width:100%}.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__description{flex:1 0 60%}.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav{flex:1 0 30%;display:flex;justify-content:center;border:none;background:none}.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav:focus{outline:none}.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav img{cursor:pointer;width:50px}.techlist__section .tech__main__container .tech__card__container:hover{transform:scale(1.01)}.techlist__section .tech__main__container .no__items__found{display:flex;justify-content:center;align-items:center}.techlist__section .tech__footer__container{width:100%;display:flex;justify-content:flex-end;align-items:center;padding-right:25px;height:7vh;background:#f2f5f9}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Bold.1e229b29.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-SemiBold.5d3cc3f4.ttf);
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Regular.4dc72c8d.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Light.27755a20.ttf);
+  font-style: normal;
+  font-weight: 300;
+}
+.techlist__section {
+  display: block;
+  width: 300px;
+  max-height: 100vh;
+}
+@media only screen and (min-width: 640px) {
+  .techlist__section {
+    width: 640px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .techlist__section {
+    width: 1024px;
+  }
+}
+.techlist__section .tech__nav__container {
+  width: 100%;
+  background: #f2f5f9;
+  padding: 10px;
+}
+.techlist__section .tech__nav__container .tech__nav__right {
+  display: flex;
+  align-items: center;
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs,
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters {
+  flex: 1 1 50%;
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 135px;
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button {
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:first-child {
+  background-image: url(/static/media/arrow-up.029e9e03.svg);
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__filters button:last-child {
+  background-image: url(/static/media/arrow-down.5b0512cf.svg);
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.techlist__section .tech__nav__container .tech__nav__right .tech__nav__favs img {
+  width: 25px;
+  margin-right: 10px;
+}
+@media only screen and (min-width: 640px) {
+  .techlist__section .tech__nav__container {
+    display: flex;
+  }
+  .techlist__section .tech__nav__container .input__container {
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+  }
+  .techlist__section .tech__nav__container .tech__nav__right {
+    justify-content: space-evenly;
+    width: 50%;
+  }
+}
+.techlist__section .tech__main__container {
+  display: flex;
+  min-height: 80vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+  overflow-y: auto;
+}
+.techlist__section .tech__main__container::-webkit-scrollbar {
+  background: #fff;
+  width: 3px;
+}
+.techlist__section .tech__main__container::-webkit-scrollbar-thumb {
+  background: #97cf00;
+}
+.techlist__section .tech__main__container .tech__card__container {
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex: 1 0 280px;
+  flex-direction: column;
+  height: 250px;
+  justify-content: space-between;
+  margin: 10px;
+  max-width: 300px;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.techlist__section .tech__main__container .tech__card__container img {
+  max-width: 200px;
+  max-height: 100px;
+  padding: 10px;
+}
+.techlist__section .tech__main__container .tech__card__container .tech__card__body {
+  align-items: center;
+  border-top: 2px solid #1b263c;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  min-height: 100px;
+  width: 100%;
+}
+.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__description {
+  flex: 1 0 60%;
+}
+.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav {
+  flex: 1 0 30%;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav:focus {
+  outline: none;
+}
+.techlist__section .tech__main__container .tech__card__container .tech__card__body .tech__card__fav img {
+  cursor: pointer;
+  width: 50px;
+}
+.techlist__section .tech__main__container .tech__card__container:hover {
+  transform: scale(1.01);
+}
+.techlist__section .tech__main__container .no__items__found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.techlist__section .tech__footer__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 25px;
+  height: 7vh;
+  background: #f2f5f9;
+}
 /*# sourceMappingURL=9.ee34ddee.chunk.css.map */

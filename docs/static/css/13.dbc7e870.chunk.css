@@ -1,2 +1,31 @@
-@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Bold.1e229b29.ttf);font-style:normal;font-weight:700}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-SemiBold.5d3cc3f4.ttf);font-style:normal;font-weight:600}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Regular.4dc72c8d.ttf);font-style:normal;font-weight:400}@font-face{font-family:"firaSans";src:url(/static/media/FiraSans-Light.27755a20.ttf);font-style:normal;font-weight:300}.term__conditions__section{padding:25px;display:flex;flex-direction:column;justify-content:space-evenly}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Bold.1e229b29.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-SemiBold.5d3cc3f4.ttf);
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Regular.4dc72c8d.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'firaSans';
+  src: url(./static/media/FiraSans-Light.27755a20.ttf);
+  font-style: normal;
+  font-weight: 300;
+}
+.term__conditions__section {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 /*# sourceMappingURL=13.dbc7e870.chunk.css.map */
